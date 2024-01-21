@@ -76,7 +76,7 @@ export function SendPrompt() {
 
           console.log("New Prompt:Response added to the database with id : ", newGpt);
           console.log(db.gpt_db);
-
+          console.log(process.env.backend_url)
           // Use the updated state to ensure you get the correct response
           setPrevPrompts(prevPromptsFunArg => [
             ...prevPromptsFunArg,
