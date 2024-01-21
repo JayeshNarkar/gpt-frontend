@@ -54,13 +54,14 @@ export function SendPrompt() {
       setIsLoading(false);
       return;
     }
-
+    //add credentials
     const config = {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'withCredentials': true        
       }
     };
-    const backendUrl = '/api/gpt';
+    const backendUrl = 'https://gpt-backend-wheat.vercel.app/gpt';
     axios.post(backendUrl, data, config)
       .then(async (response) => {
         // Update response state
